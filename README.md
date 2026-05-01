@@ -72,27 +72,6 @@ Client → Express Routes → Controllers → Database (PostgreSQL) → EJS View
 
 ---
 
-## 🗄️ Database Schema
-
-### Users
-
-- `id`
-- `first_name`
-- `last_name`
-- `email` (used as username)
-- `password` (hashed)
-- `membership_status` (boolean)
-- `admin_status` (boolean)
-
-### Messages
-
-- `id`
-- `title`
-- `text`
-- `created_at`
-- `user_id` (foreign key)
-
----
 
 ## Permission Logic
 
@@ -113,7 +92,7 @@ username: req.user?.membership_status ? message.username : null;
 
 ---
 
-## ⚙️ Tech Stack
+##  Tech Stack
 
 - **Backend:** Node.js, Express
 - **Templating:** EJS (Server-Side Rendering)
@@ -124,7 +103,7 @@ username: req.user?.membership_status ? message.username : null;
 
 ---
 
-## 🛠️ Installation
+##  Installation
 
 ```bash
 git clone https://github.com/mansuur-iman/Members-only.git
