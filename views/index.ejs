@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head') %>
+<body>
+     <%-include('partials/navbar.ejs')%>
+    <main>
+   <% filteredMessages.forEach((message) => { %>
+  <div class="post-card">
+
+    <div class="post-header">
+      <h3><%= message.username %></h3>
+      <span class="post-date">
+        <%= message.created_at ? message.created_at.toLocaleString() : '' %>
+      </span>
+    </div>
+
+    <h4 class="post-title"><%= message.title %></h4>
+    <p class="post-text"><%= message.text %></p>
+
+    <div class="post-actions">
+      <form action="/message/<%=message.id%>/edit" method="GET">
+        <button class="edit-btn">Edit</button>
+      </form>
+
+      <form action="/message/<%=message.id%>/delete" method="POST">
+        <button class="delete-btn">Delete</button>
+      </form>
+    </div>
+
+  </div>
+<% }) %>
+    </main>
+    <%-include('partials/footer.ejs')%>
+</body>
+</html>

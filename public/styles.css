@@ -1,0 +1,289 @@
+/* =========================
+   CORE & VARIABLES
+========================= */
+:root {
+  --primary: #1877f2;
+  --primary-hover: #166fe5;
+  --bg-color: #f0f2f5;
+  --card-bg: #ffffff;
+  --text-main: #1c1e21;
+  --text-muted: #65676b;
+  --border-color: #dddfe2;
+  --danger: #fa383e;
+  --success: #42b72a;
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================
+   NAVBAR (Clean & White)
+========================= */
+header {
+  background: var(--card-bg);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 a {
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+nav li {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-main);
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+nav a:hover {
+  background: #f2f2f2;
+  color: var(--primary);
+}
+
+/* Logout Button Reset */
+nav form button {
+  background: #f0f2f5;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-main);
+  transition: all 0.2s;
+}
+
+nav form button:hover {
+  background: #e4e6eb;
+  color: var(--danger);
+}
+
+/* =========================
+   MAIN FEED & CARDS
+========================= */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 650px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+main h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: var(--text-main);
+}
+
+.post-card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.post-header h3 {
+  font-size: 1rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.post-date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.post-title {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.post-text {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 15px;
+  white-space: pre-wrap; /* Preserves line breaks */
+}
+
+/* Action Bar */
+.post-actions {
+  display: flex;
+  gap: 10px;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+.post-actions button {
+  padding: 6px 15px;
+  border-radius: 5px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: 0.2s;
+}
+
+.edit-btn {
+  background: #e7f3ff;
+  color: var(--primary);
+}
+.edit-btn:hover {
+  background: #dbedff;
+}
+
+.delete-btn {
+  background: #fde8e8;
+  color: var(--danger);
+}
+.delete-btn:hover {
+  background: #fbd5d5;
+}
+
+/* =========================
+   FORMS (Login, Signup, Join)
+========================= */
+form {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+
+input,
+textarea {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  transition: border 0.2s;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+button[type="submit"] {
+  background: var(--primary);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background: var(--primary-hover);
+}
+
+/* Links below forms */
+main > p {
+  text-align: center;
+  margin-top: 15px;
+  color: var(--text-muted);
+}
+
+main > p a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* =========================
+   ERRORS (Flash Messages)
+========================= */
+ul {
+  list-style: none;
+  max-width: 650px;
+  margin: 10px auto;
+}
+
+ul li {
+  background: #fde8e8;
+  color: var(--danger);
+  padding: 10px 15px;
+  border-radius: 6px;
+  border-left: 5px solid var(--danger);
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  margin-top: auto;
+  padding: 30px;
+  text-align: center;
+  background: var(--card-bg);
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}

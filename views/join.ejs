@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+   <%- include('partials/head') %>
+  <body>
+    <%-include('partials/navbar.ejs')%>
+<%-include('partials/errors.ejs')%>
+<main>
+  <h2>Join the club</h2>
+  <% if(user?.membership_status){ %>
+    <p>You are already a member!</p>
+  <% } else { %>
+    <form action="/join" method="POST">
+      <label for="passcode">Passcode:</label>
+      <input
+        type="password"
+        id="passcode"
+        name="passcode"
+        placeholder="Enter passcode."
+        required
+        autocomplete="current-password"
+      />
+      <button type="submit">Join</button>
+    </form>
+  <% } %>
+</main>
+<%-include('partials/footer.ejs')%>
+
+      </body>
+    </html>
+  </body>
+</html>

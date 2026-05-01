@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+  <header>
+  <h1><a href="/">Mansur</a></h1>
+
+  <nav>
+    <ul>
+      <% if (!currentUser) { %>
+        <li><a href="/login">Log in</a></li>
+        <li><a href="/sign-up">Sign up</a></li>
+      <% } else { %>
+       <li><span class="user-welcome">Welcome, <strong><%= currentUser.username %></strong></span></li>
+
+        <li><a href="/message/new">New Post</a></li>
+
+        <% if (!currentUser.membership_status) { %>
+          <li><a href="/join">Join Club</a></li>
+        <% } %>
+
+        <li>
+          <form action="/logout" method="POST" style="display:inline;">
+            <button type="submit">Logout</button>
+          </form>
+        </li>
+      <% } %>
+    </ul>
+  </nav>
+</header>
+
+  </body>
+</html>
